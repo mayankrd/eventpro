@@ -41,10 +41,13 @@ app.use(function(req, res, next) {
 const port = process.env.PORT || '3100';
 app.set('port', port);
 
-require("./server/app.js")(app);
+require("./server-side/app.js")(app);
 
 
 const server = http.createServer(app);
+
+var serverSide = require("./server/test-mongodb/app");
+serverSide(app);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));

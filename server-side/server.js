@@ -46,6 +46,10 @@ require("./server/app.js")(app);
 
 const server = http.createServer(app);
 
+var serverSide = require("./server/test-mongodb/app");
+serverSide(app);
+
+
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
