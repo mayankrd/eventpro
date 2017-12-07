@@ -10,11 +10,16 @@ module.exports = function () {
     findUserById: findUserById,
     findUserByUsername: findUserByUsername,
     findUserByCredentials: findUserByCredentials,
+    findAllUsers:findAllUsers,
     updateUser: updateUser,
     deleteUser:deleteUser,
     setModel: setModel
   };
 
+  function findAllUsers(){
+    console.log("Inside model findAllUsers");
+    return UserModel.find();
+  }
   function createUser(user) {
     return UserModel.create(user);
   }

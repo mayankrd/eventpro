@@ -2,9 +2,13 @@ module.exports = function(app, userModel) {
 
  app.post("/api/user", createUser);
  app.get("/api/user", findUser);
+  app.get("/api/users/",findAllUsers);
  app.get("/api/user/:userId", findUserById);
  app.delete("/api/user/:userId", deleteUser);
   app.put("/api/user/:userId", updateUser);
+
+
+
   function createUser(req, res){
     var newUser = req.body;
     console.log(newUser);
@@ -38,6 +42,21 @@ function findUserByCredentials(req, res) {
         res.json(user[0]);
       });
   }
+
+function findAllUsers(req,res){
+  console.log("Find All Events");
+  userModel
+  .findAllUsers()
+  .then(function(user){
+    console.log("In findAllUsers");
+    console.log(user);
+    res.json(user);
+  },function(error){
+    res.sendStatus(404).send(error);
+  })
+}
+
+
 
 
 function findUserById(req, res) {
