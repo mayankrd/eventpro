@@ -1,0 +1,15 @@
+/**
+ * Created by mayankrd on 12/7/17.
+ */
+
+// Import components
+import {Routes, RouterModule} from '@angular/router';
+import {ModuleWithProviders} from '@angular/core';
+import {HomeComponent} from "./home/home.component";
+
+const APP_ROUTES: Routes = [
+  {path: '', component : HomeComponent}
+];
+
+// Export the routes as module providers
+export const Routing: ModuleWithProviders = RouterModule.forRoot(APP_ROUTES);
