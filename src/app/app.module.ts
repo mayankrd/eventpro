@@ -6,11 +6,15 @@ import {Routing} from "./routing";
 import {EventService} from "./services/event.client.service";
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CategoryComponent } from './category/category.component';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CategoryComponent,
+    EventComponent
   ],
   imports: [
     BrowserModule,
