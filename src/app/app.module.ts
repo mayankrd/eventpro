@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CategoryComponent } from './category/category.component';
 import { EventComponent } from './event/event.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CategoryComponent,
-    EventComponent
+    EventComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
