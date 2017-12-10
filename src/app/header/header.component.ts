@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedDataService} from "../services/shared.data.service";
+import {Router} from "@angular/router";
+import {EventService} from "../services/event.client.service";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   searchKey: string;
 
-  constructor() { }
+  constructor(private eventService: EventService, private sharedDataService: SharedDataService, private router: Router) { }
 
   ngOnInit() {
 
@@ -17,8 +20,15 @@ export class HeaderComponent implements OnInit {
 
   searchEvents(){
 
-    console.log(this.searchKey);
+    this.eventService.searchEvents(this.searchKey)
+      .subscribe(
+        (data) => {
+          this.sharedDataService.events = data.events,
 
+            console.log(this.sharedDataService.events);
+        }
+      );
+
+    //this.router.navigate(['']);
   }
-
 }

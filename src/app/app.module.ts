@@ -14,6 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {TruncatePipe} from "./home/truncate.pipe";
+import {SharedDataService} from "./services/shared.data.service";
+import { EventdetailComponent } from './eventdetail/eventdetail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import {TruncatePipe} from "./home/truncate.pipe";
     SidebarComponent,
     LoginComponent,
     RegisterComponent,
-    TruncatePipe
+    TruncatePipe,
+    EventdetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import {TruncatePipe} from "./home/truncate.pipe";
     HttpModule,
     FormsModule
   ],
-  providers: [EventService],
+  providers: [EventService, SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

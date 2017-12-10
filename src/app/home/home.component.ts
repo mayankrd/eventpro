@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "app/services/event.client.service";
+import {SharedDataService} from "../services/shared.data.service";
 
 @Component({
   selector: 'app-home',
@@ -10,18 +11,13 @@ export class HomeComponent implements OnInit {
 
   events = [];
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, public sharedDataService: SharedDataService) { }
 
   ngOnInit() {
 
-      this.eventService.searchEvents("Cricket")
-        .subscribe(
-          (data) => {
-              this.events = data.events,
-              console.log(this.events)
-          }
-        );
-
   }
 
+  showEventDetails(event){
+    console.log(event);
+  }
 }

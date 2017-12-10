@@ -12,10 +12,10 @@
 <div class="container">
   <!-- Example row of columns -->
   <div class="row">
-    <div class="col-md-4" *ngFor="let event of events">
+    <div class="col-md-4" *ngFor="let event of this.sharedDataService.events">
       <h2>{{event.name.text }}  </h2>
       <p> {{event.description.text | slice:0:100}} </p>
-      <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+      <p><a class="btn btn-secondary" (click) = "showEventDetails(event)" role="button">View details &raquo;</a></p>
     </div>
   </div>
 
