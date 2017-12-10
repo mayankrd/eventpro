@@ -1,7 +1,6 @@
-<div class="row">
+<div class="row pad_top">
   <div class="col-md-4">
-    <h2> {{event.name.text }}  </h2>
-    <p> {{event.description.text}} </p>
-    <p><a class="btn btn-secondary" [routerLink]="['/eventdetail']" role="button">View details &raquo;</a></p>
+    <h2> {{ this.sharedeDataService.eventdetail.name.text }}  </h2>
+    <p> {{ this.sharedeDataService.eventdetail.description.text}} </p>
   </div>
 </div>

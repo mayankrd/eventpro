@@ -29,6 +29,6 @@ export class HeaderComponent implements OnInit {
         }
       );
 
-    //this.router.navigate(['']);
+    this.router.navigate(['']);
   }
 }

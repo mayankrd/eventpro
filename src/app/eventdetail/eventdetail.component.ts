@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {SharedDataService} from "../services/shared.data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-eventdetail',
@@ -7,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventdetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sharedeDataService: SharedDataService, private router: Router) { }
 
   ngOnInit() {
-  }
-
-  showEventDetails(event){
-
+    if(this.sharedeDataService.eventdetail == undefined){
+      this.router.navigate(['/']);
+    }
   }
 
 }
