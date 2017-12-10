@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "app/services/event.client.service";
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
