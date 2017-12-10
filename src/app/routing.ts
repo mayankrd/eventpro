@@ -8,11 +8,13 @@ import {ModuleWithProviders} from '@angular/core';
 import {HomeComponent} from "./home/home.component";
 import {CategoryComponent} from "./category/category.component";
 import {EventComponent} from "./event/event.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
   {path: 'new/category', component : CategoryComponent},
-  {path: 'new/event', component : EventComponent}
+  {path: 'new/event', component : EventComponent},
+  {path: 'profile', component : ProfileComponent}
 ];
 
 // Export the routes as module providers

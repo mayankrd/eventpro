@@ -9,6 +9,8 @@ import { HttpModule } from '@angular/http';
 import { CategoryComponent } from './category/category.component';
 import { EventComponent } from './event/event.component';
 import { HeaderComponent } from './header/header.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HeaderComponent } from './header/header.component';
     HomeComponent,
     CategoryComponent,
     EventComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProfileComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
