@@ -39,13 +39,7 @@ export class UserService {
 
     this.options.withCredentials = true;
 
-    const body = {
-      username : user.username,
-      password : user.password,
-      firstName : user.firstName,
-      lastName : user.lastName,
-      email : user.email
-    };
+    const body = user;
 
     return this._http.post(this.baseUrl + '/api/user', body, this.options)
       .map(

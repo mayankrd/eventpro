@@ -17,6 +17,8 @@ import {TruncatePipe} from "./home/truncate.pipe";
 import {SharedDataService} from "./services/shared.data.service";
 import { EventdetailComponent } from './eventdetail/eventdetail.component';
 import {UserService} from "./services/user.client.service";
+import { ManageeventComponent } from './manageevent/manageevent.component';
+import { ListCreatedEventsComponent } from './list-created-events/list-created-events.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {UserService} from "./services/user.client.service";
     LoginComponent,
     RegisterComponent,
     TruncatePipe,
-    EventdetailComponent
+    EventdetailComponent,
+    ManageeventComponent,
+    ListCreatedEventsComponent
   ],
   imports: [
     BrowserModule,

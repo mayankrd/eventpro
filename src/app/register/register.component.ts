@@ -32,8 +32,11 @@ export class RegisterComponent implements OnInit {
       password: this.password,
       firstName: this.firstName,
       lastName: this.lastName,
-      email: this.email
-    }
+      email: this.email,
+      type: 'user'
+    };
+
+    console.log(user);
 
     this.userService.register(user)
       .subscribe(

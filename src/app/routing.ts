@@ -12,6 +12,8 @@ import {ProfileComponent} from "./profile/profile.component";
 import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {EventdetailComponent} from "./eventdetail/eventdetail.component";
+import {ManageeventComponent} from "./manageevent/manageevent.component";
+import {ListCreatedEventsComponent} from "./list-created-events/list-created-events.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -20,7 +22,9 @@ const APP_ROUTES: Routes = [
   {path: 'profile', component : ProfileComponent},
   {path: 'login', component : LoginComponent},
   {path: 'register', component : RegisterComponent},
-  {path: 'eventdetail', component : EventdetailComponent}
+  {path: 'eventdetail', component : EventdetailComponent},
+  {path: 'manage/list/events', component : ListCreatedEventsComponent},
+  {path: 'manage/event/:eventId', component : ManageeventComponent}
 ];
 
 // Export the routes as module providers

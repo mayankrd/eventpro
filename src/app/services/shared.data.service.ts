@@ -5,9 +5,12 @@ import {Injectable} from '@angular/core';
 @Injectable()
 
 export class SharedDataService {
-  user = '';
+  user;
   searchKey = '';
   events = '';
   eventdetail = '';
   loggedIn = false;
+  manageEventsVisible = false;
+  manageCategoriesVisible = false;
+  manageUsersVisible = false;
 }
