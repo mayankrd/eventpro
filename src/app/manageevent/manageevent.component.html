@@ -1,0 +1,48 @@
+<form class="container pad_top" >
+  <h1>Manage Events</h1>
+  <div *ngIf="successFlag" class="alert  alert-info" role="alert">
+    Event Created Successfully!
+  </div>
+  <div class="form-group">
+
+    <label for="eventName">Event Name</label>
+    <input [(ngModel)]="eventName" name="name" type="text" class="form-control" id="eventName" aria-describedby="emailHelp">
+    <br>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Category
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div *ngFor="let cat of this.categories">
+          <a class="dropdown-item" (click)="selectCategory(cat)" >{{cat.categoryname}}</a>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <label for="eventDesc">Event Description</label>
+    <textarea [(ngModel)]="eventDesc" name="desc" class="form-control" id="eventDesc" rows="3"></textarea>
+    <br>
+
+    <label for="eventLoc">Event Location</label>
+    <br>
+    <small for="eventLoc">Street 1</small>
+    <input [(ngModel)]="street1" name="street1" type="text" class="form-control" id="street1" aria-describedby="emailHelp">
+    <small for="eventLoc">Street 2</small>
+    <input [(ngModel)]="street2" name="street2" type="text" class="form-control" id="street2" aria-describedby="emailHelp">
+    <small for="eventLoc">Zip Code</small>
+    <input [(ngModel)]="zip" name="loc" type="text" class="form-control" id="eventLoc" aria-describedby="emailHelp">
+    <small for="eventLoc">Country</small>
+    <input [(ngModel)]="country" name="loc" type="text" class="form-control" id="country" aria-describedby="emailHelp">
+    <small for="eventLoc">State</small>
+    <input [(ngModel)]="state" name="loc" type="text" class="form-control" id="state" aria-describedby="emailHelp">
+
+    <br>
+    <label for="eventPhone">Event Contact Deails</label>
+    <input [(ngModel)]="eventCont" name="cont" type="text" class="form-control" id="eventPhone" aria-describedby="emailHelp">
+
+  </div>
+  <button (click)="updateEvent()" class="btn btn-primary">Update</button>
+  <button (click)="deleteEvent()" class="btn btn-primary">Delete</button>
+</form>

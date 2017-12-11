@@ -17,6 +17,7 @@ import {ListCreatedEventsComponent} from "./list-created-events/list-created-eve
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
+  {path: 'home', component : HomeComponent},
   {path: 'new/category', component : CategoryComponent},
   {path: 'new/event', component : EventComponent},
   {path: 'profile', component : ProfileComponent},

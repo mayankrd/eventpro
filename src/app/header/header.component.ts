@@ -36,6 +36,6 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.sharedDataService.user = '';
     this.sharedDataService.loggedIn = false;
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 }

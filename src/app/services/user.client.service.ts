@@ -49,4 +49,19 @@ export class UserService {
         }
       );
   }
+
+  updateUser(user){
+
+    this.options.withCredentials = true;
+
+    const body = user;
+
+    return this._http.put(this.baseUrl + '/api/user/' + user._id, body, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+  }
 }
