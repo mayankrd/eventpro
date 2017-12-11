@@ -8,6 +8,19 @@
     <label for="eventName">Event Name</label>
     <input [(ngModel)]="eventName" name="name" type="text" class="form-control" id="eventName" aria-describedby="emailHelp">
     <br>
+
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Select Category
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div *ngFor="let cat of this.categories">
+          <a class="dropdown-item" (click)="selectCategory(cat)" >{{cat.categoryname}}</a>
+       </div>
+      </div>
+    </div>
+
+    <br>
     <label for="eventDesc">Event Description</label>
     <textarea [(ngModel)]="eventDesc" name="desc" class="form-control" id="eventDesc" rows="3"></textarea>
     <br>

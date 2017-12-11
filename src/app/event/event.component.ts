@@ -17,12 +17,26 @@ export class EventComponent implements OnInit {
   state: string;
   zip: string;
   eventCont: string;
+  categories = [];
+  cat = {};
 
   constructor(private eventService: EventService) {}
 
   ngOnInit() {
 
     this.successFlag = false;
+
+    this.eventService.findAllCategories()
+      .subscribe(
+        (data) =>{
+          this.categories = data;
+        }
+      );
+  }
+
+  selectCategory(cat){
+      console.log(cat);
+      this.cat = cat;
   }
 
   createEvent(){
@@ -40,8 +54,9 @@ export class EventComponent implements OnInit {
       },
       contact: {
         phonenumber: this.eventCont
-      }
-    }
+      },
+      Category: this.cat
+    };
 
     this.eventService.createEvent(event)
       .subscribe(
