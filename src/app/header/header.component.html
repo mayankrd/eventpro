@@ -10,22 +10,27 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['profile']">Profile <span class="sr-only">(current)</span></a>
+        <a class="nav-link" *ngIf="this.sharedDataService.loggedIn; else falsyTemplate" [routerLink]="['profile']">Profile <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['login']">Login <span class="sr-only">(current)</span></a>
-      </li>
+      <ng-template #falsyTemplate>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['login']">Login <span class="sr-only">(current)</span></a>
+        </li>
+      </ng-template>
+      <ng-template #falsyTemplate1>
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['register']">Register <span class="sr-only">(current)</span></a>
       </li>
+      </ng-template>
+
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['new/category']">Create Category <span class="sr-only">(current)</span></a>
+        <a class="nav-link" *ngIf="this.sharedDataService.loggedIn; else falsyTemplate1" [routerLink]="['new/category']">Create Category <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['new/event']">Create Event <span class="sr-only">(current)</span></a>
+        <a class="nav-link" *ngIf="this.sharedDataService.loggedIn" [routerLink]="['new/event']">Create Event <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item active">
+        <a class="nav-link" *ngIf="this.sharedDataService.loggedIn" (click)="logout()">Logout <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>

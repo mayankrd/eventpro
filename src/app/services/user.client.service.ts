@@ -4,6 +4,7 @@
 import {Injectable} from '@angular/core';
 import {Http, RequestOptions, Response} from '@angular/http';
 import 'rxjs/Rx';
+import {HttpParams} from "@angular/common/http";
 
 // injecting service into module
 @Injectable()
@@ -15,6 +16,24 @@ export class UserService {
   baseUrl = 'http://localhost:3100';
 
   options = new RequestOptions();
+
+  login(credentials) {
+
+    this.options.withCredentials = true;
+
+    const body = {
+      username : credentials.username,
+      password : credentials.password
+    };
+
+    return this._http.post(this.baseUrl + '/api/login', body, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+  }
 
   register(user) {
 
