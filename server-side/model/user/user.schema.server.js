@@ -12,6 +12,7 @@ module.exports = function () {
     address: [AddressSchema],
     phone: [PhoneSchema],
     events : [EventSchema],
+    createdEvents:[EventSchema]
     type : String
     }, {collection: 'users'});
 

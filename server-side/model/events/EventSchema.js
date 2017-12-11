@@ -11,6 +11,7 @@ module.exports = function () {
     contact: [PhoneSchema],
     Category : CategorySchema,
     users :[String],
+    organiser:[String],
     comments :[CommentSchema]
   }, {collection: 'events'});
 
