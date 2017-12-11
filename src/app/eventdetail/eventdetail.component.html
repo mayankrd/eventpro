@@ -1,6 +1,10 @@
-<div class="row pad_top">
-  <div class="col-md-4">
+<div class="row pad_top container">
+  <div class="col-md-12">
     <h2> {{ this.sharedeDataService.eventdetail.name.text }}  </h2>
     <p> {{ this.sharedeDataService.eventdetail.description.text}} </p>
+    <h4> Starts:  </h4> <p> {{ this.sharedeDataService.eventdetail.start.local | date }} {{ this.sharedeDataService.eventdetail.start.local | date:'shortTime' }} Time Zone: {{ this.sharedeDataService.eventdetail.start.timezone}} </p>
+
+  <!-- Indicates a successful or positive action -->
+  <button type="button" class="btn btn-success">Register</button>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SharedDataService} from "../services/shared.data.service";
 import {Router} from "@angular/router";
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-eventdetail',
