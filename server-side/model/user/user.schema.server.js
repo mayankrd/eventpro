@@ -11,7 +11,8 @@ module.exports = function () {
     email: String,
     address: [AddressSchema],
     phone: [PhoneSchema],
-    events : [EventSchema]
+    events : [EventSchema],
+    type : String
     }, {collection: 'users'});
 
   return UserSchema;
