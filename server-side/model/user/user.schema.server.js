@@ -2,6 +2,7 @@ module.exports = function () {
   var mongoose = require('mongoose');
   var AddressSchema = require('../Address/AddressSchema.js')();
   var PhoneSchema = require('../Phone/PhoneSchema.js')();
+  var EventSchema = require('../events/EventSchema.js')();
   var UserSchema = mongoose.Schema({
     username: String,
     password: String,
@@ -9,7 +10,8 @@ module.exports = function () {
     lastName: String,
     email: String,
     address: [AddressSchema],
-    phone: [PhoneSchema]
+    phone: [PhoneSchema],
+    events : [EventSchema]
     }, {collection: 'users'});
 
   return UserSchema;

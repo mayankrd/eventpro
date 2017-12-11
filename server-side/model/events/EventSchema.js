@@ -6,7 +6,8 @@ module.exports = function () {
     eventname: String,
     eventdescription: String,
     location: AddressSchema,
-    contact: [PhoneSchema]
+    contact: [PhoneSchema],
+    users :[String]
   }, {collection: 'events'});
 
   return EventSchema;
