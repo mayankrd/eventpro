@@ -12,7 +12,8 @@ export class HeaderComponent implements OnInit {
 
   searchKey: string;
 
-  constructor(private eventService: EventService, private sharedDataService: SharedDataService, private router: Router) { }
+
+  constructor(private eventService: EventService, public sharedDataService: SharedDataService, private router: Router) { }
 
   ngOnInit() {
 
@@ -30,5 +31,11 @@ export class HeaderComponent implements OnInit {
       );
 
     this.router.navigate(['']);
+  }
+
+  logout(){
+    this.sharedDataService.user = '';
+    this.sharedDataService.loggedIn = false;
+    this.router.navigate(['/']);
   }
 }

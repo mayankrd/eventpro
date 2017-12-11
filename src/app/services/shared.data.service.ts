@@ -9,4 +9,5 @@ export class SharedDataService {
   searchKey = '';
   events = '';
   eventdetail = '';
+  loggedIn = false;
 }

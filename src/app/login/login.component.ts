@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         (data) => {
           console.log(data);
           this.sharedService.user = data;
+          this.sharedService.loggedIn = true;
           this.router.navigate(['/profile']);
         },
         (error) => this.errorFlag = true
