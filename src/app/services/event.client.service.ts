@@ -10,16 +10,48 @@ import 'rxjs/Rx';
 
 export class EventService {
 
-  constructor(private _http: Http) {
-  }
+  constructor(private _http: Http) { }
 
   baseUrl = 'https://www.eventbriteapi.com/v3/events/search/?token=PLTE6KPPWJJU7OK7RZRH&';
+  baseUrlServer = 'http://localhost:3100';
 
   options = new RequestOptions();
 
   searchEvents(query) {
     this.options.withCredentials = true;
     return this._http.get(this.baseUrl + 'q=' + query)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+
+  }
+
+  createEvent(event){
+
+    this.options.withCredentials = true;
+
+    const body = event;
+
+    return this._http.post(this.baseUrlServer + '/api/event', body, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+
+  }
+
+  createCategory(category){
+
+    this.options.withCredentials = true;
+
+    const body = category;
+
+    return this._http.post(this.baseUrlServer + '/api/category', body, this.options)
       .map(
         (res: Response) => {
           const data = res.json();
