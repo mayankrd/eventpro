@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 import {TruncatePipe} from "./home/truncate.pipe";
 import {SharedDataService} from "./services/shared.data.service";
 import { EventdetailComponent } from './eventdetail/eventdetail.component';
+import {UserService} from "./services/user.client.service";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { EventdetailComponent } from './eventdetail/eventdetail.component';
     HttpModule,
     FormsModule
   ],
-  providers: [EventService, SharedDataService],
+  providers: [EventService, SharedDataService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
