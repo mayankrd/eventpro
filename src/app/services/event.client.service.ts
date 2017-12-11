@@ -60,4 +60,16 @@ export class EventService {
       );
 
   }
+
+  findAllCategories(){
+    this.options.withCredentials = true;
+    return this._http.get(this.baseUrlServer + '/api/category', this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+
+  }
 }
