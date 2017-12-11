@@ -88,6 +88,8 @@ function updateUser(req, res) {
     var userId = req.params.userId;
     var newUser = req.body;
 
+    console.log(newUser);
+
     userModel
       .updateUser(userId, newUser)
       .then(function(user) {

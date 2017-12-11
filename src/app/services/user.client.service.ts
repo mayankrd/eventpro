@@ -50,18 +50,24 @@ export class UserService {
       );
   }
 
-  updateUser(user){
 
-    this.options.withCredentials = true;
+  updateUser(user) {
 
-    const body = user;
+    console.log(JSON.stringify(user));
 
-    return this._http.put(this.baseUrl + '/api/user/' + user._id, body, this.options)
+    var url = this.baseUrl + '/api/user/' + user._id;
+
+    user = JSON.stringify(user);
+
+    console.log(url);
+
+    return this._http.put(url, user)
       .map(
         (res: Response) => {
-          const data = res.json();
-          return data;
+          return 'Updated';
         }
       );
+
   }
+
 }

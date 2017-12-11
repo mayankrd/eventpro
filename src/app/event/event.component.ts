@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../services/event.client.service";
 import {SharedDataService} from "../services/shared.data.service";
+import {UserService} from "../services/user.client.service";
 
 @Component({
   selector: 'app-event',
@@ -21,7 +22,7 @@ export class EventComponent implements OnInit {
   categories = [];
   cat = {};
 
-  constructor(private eventService: EventService, private sharedDataService: SharedDataService) {}
+  constructor(private eventService: EventService, private sharedDataService: SharedDataService, private userService: UserService) {}
 
   ngOnInit() {
 
@@ -69,6 +70,9 @@ export class EventComponent implements OnInit {
         (data) => {
           this.successFlag = true;
           console.log(data);
+          this.sharedDataService.user.createdEvents.push(data);
+          console.log(this.sharedDataService.user);
+          this.userService.updateUser(this.sharedDataService.user);
         },
         (error) => {
           this.successFlag = false;
