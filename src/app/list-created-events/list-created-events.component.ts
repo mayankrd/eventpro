@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../services/event.client.service";
+import {SharedDataService} from "../services/shared.data.service";
 
 @Component({
   selector: 'app-list-created-events',
@@ -8,9 +9,11 @@ import {EventService} from "../services/event.client.service";
 })
 export class ListCreatedEventsComponent implements OnInit {
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService, private sharedDataSrevice: SharedDataService) { }
 
   ngOnInit() {
+
+    this.sharedDataSrevice.ge
   }
 
 }
