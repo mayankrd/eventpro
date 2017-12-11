@@ -55,7 +55,7 @@ export class EventComponent implements OnInit {
       contact: {
         phonenumber: this.eventCont
       },
-      category: this.cat
+      Category: this.cat
     };
 
     this.eventService.createEvent(event)
