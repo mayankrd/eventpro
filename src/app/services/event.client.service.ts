@@ -77,6 +77,20 @@ export class EventService {
 
   }
 
+  deleteCategory(id){
+
+    this.options.withCredentials = true;
+
+    return this._http.delete(this.baseUrlServer + '/api/category/' + id, this.options)
+      .map(
+        (res: Response) => {
+          const data = res;
+          return data;
+        }
+      );
+
+  }
+
   findAllCategories(){
     this.options.withCredentials = true;
     return this._http.get(this.baseUrlServer + '/api/category', this.options)
@@ -120,6 +134,7 @@ export class EventService {
         }
       );
   }
+
 
 
 }

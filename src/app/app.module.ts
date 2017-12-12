@@ -20,6 +20,7 @@ import {UserService} from "./services/user.client.service";
 import { ManageeventComponent } from './manageevent/manageevent.component';
 import { ListCreatedEventsComponent } from './list-created-events/list-created-events.component';
 import { AllUsersComponent } from './all-users/all-users.component';
+import { AllCategoriesComponent } from './all-categories/all-categories.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AllUsersComponent } from './all-users/all-users.component';
     EventdetailComponent,
     ManageeventComponent,
     ListCreatedEventsComponent,
-    AllUsersComponent
+    AllUsersComponent,
+    AllCategoriesComponent
   ],
   imports: [
     BrowserModule,
