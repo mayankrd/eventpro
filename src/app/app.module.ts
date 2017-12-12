@@ -22,6 +22,7 @@ import { ListCreatedEventsComponent } from './list-created-events/list-created-e
 import { AllUsersComponent } from './all-users/all-users.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
 import { LocalEventsComponent } from './local-events/local-events.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LocalEventsComponent } from './local-events/local-events.component';
     ListCreatedEventsComponent,
     AllUsersComponent,
     AllCategoriesComponent,
-    LocalEventsComponent
+    LocalEventsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
