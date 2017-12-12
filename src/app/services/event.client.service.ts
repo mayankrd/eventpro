@@ -149,5 +149,23 @@ export class EventService {
   }
 
 
+  updateEvent(event){
+
+    this.options.withCredentials = true;
+
+    console.log(event);
+
+    return this._http.post(this.baseUrlServer + '/api/event/update', event, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          console.log(data);
+          return data;
+        }
+      );
+
+  }
+
+
 
 }

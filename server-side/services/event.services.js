@@ -1,7 +1,7 @@
 module.exports = function(app, eventModel) {
 
 app.post("/api/event", createEvent);
-app.put("/api/event/:eventId",updateEvent);
+app.post("/api/event/update",updateEvent);
 app.get("/api/event/:eventId",findEventById);
 app.delete("/api/event/:eventId",deleteEvent);
 app.get("/api/event/",findAllEvents);
@@ -18,8 +18,9 @@ function createEvent(req, res){
 }
 
 function updateEvent(req, res) {
-    var eventId = req.params.eventId;
+    //var eventId = req.params.eventId;
     var newEvent = req.body;
+    var eventId = newEvent._id;
 
     eventModel
       .updateEvent(eventId,newEvent)

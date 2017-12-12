@@ -6,6 +6,20 @@
   <p> {{event.eventdescription}} </p>
   <p><a class="btn btn-success" (click)="showEventDetails(event)" role="button">Register</a></p>
 
+
+  <div *ngFor="let com of event.comments">
+    <hr>
+    <small> {{com.firstName}} :</small>
+    <p> <span class="border"> {{com.descriptionText}}  </span> </p>
+
+  </div>
+
+
+  <div class="form-group">
+    <textarea name="comment" [(ngModel)]="comment" class="form-control" rows="5" id="comment"></textarea>
+  </div>
+  <p><a class="btn btn-secondary" (click)="addComment(event)" role="button">Comment</a></p>
+
 </div> <!-- /container -->
 
 
