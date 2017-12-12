@@ -80,5 +80,34 @@ export class UserService {
       );
   }
 
+  findAllUsers(){
+
+    this.options.withCredentials = true;
+
+    return this._http.get(this.baseUrl + '/api/users', this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+
+  }
+
+
+  deleteUser(id){
+
+    this.options.withCredentials = true;
+
+    return this._http.delete(this.baseUrl + '/api/user/' + id, this.options)
+      .map(
+        (res: Response) => {
+          const data = res;
+          return data;
+        }
+      );
+
+  }
+
 
 }
