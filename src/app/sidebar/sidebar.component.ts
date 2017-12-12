@@ -8,12 +8,25 @@ import {SharedDataService} from "../services/shared.data.service";
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(public sharedDataService: SharedDataService) { }
+  isAdmin: boolean;
+  isOrganizer: boolean;
+
+  constructor(public sharedDataService: SharedDataService) {
+  }
 
   ngOnInit() {
 
-    console.log(this.sharedDataService.manageEventsVisible);
+    var type = this.sharedDataService.user.type;
+    console.log(type);
+    if (type == 'admin')
+      this.isAdmin = true;
+    else if (type == 'organizer')
+      this.isOrganizer = true;
+    else {
+      this.isAdmin = false;
+      this.isOrganizer = false;
+
+    }
 
   }
-
 }

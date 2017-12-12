@@ -7,19 +7,19 @@
         <a>Profile Options</a>
       </li>
       <li>
-        <a [routerLink]="['/manage/list/users']">Manage Users</a>
+        <a *ngIf="isAdmin" [routerLink]="['/manage/list/users']">Manage Users</a>
       </li>
       <li>
-        <a [routerLink]="['/manage/list/events']">Manage Events</a>
+        <a *ngIf="isOrganizer" [routerLink]="['/manage/list/events']">Manage Events</a>
       </li>
       <li>
-        <a [routerLink]="['/manage/list/categories']">Manage Categories</a>
+        <a *ngIf="isOrganizer" [routerLink]="['/manage/list/categories']">Manage Categories</a>
       </li>
       <li>
-        <a *ngIf="this.sharedDataService.loggedIn; else falsyTemplate1" [routerLink]="['/new/category']">Create Category <span class="sr-only">(current)</span></a>
+        <a *ngIf="isOrganizer"  [routerLink]="['/new/category']">Create Category <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a *ngIf="this.sharedDataService.loggedIn" [routerLink]="['/new/event']">Create Event <span class="sr-only">(current)</span></a>
+        <a *ngIf="isOrganizer"  [routerLink]="['/new/event']">Create Event <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
