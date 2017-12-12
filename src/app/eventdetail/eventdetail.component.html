@@ -4,7 +4,7 @@
 
   <h2>{{event.eventname }} </h2>
   <p> {{event.eventdescription}} </p>
-  <p><a class="btn btn-success" (click)="showEventDetails(event)" role="button">Register</a></p>
+  <p><a class="btn btn-success" (click)="registerEvent(event)" role="button">Register</a></p>
 
 
   <div *ngFor="let com of event.comments">

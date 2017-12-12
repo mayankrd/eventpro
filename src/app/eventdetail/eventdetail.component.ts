@@ -3,6 +3,7 @@ import {SharedDataService} from "../services/shared.data.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { DatePipe } from '@angular/common';
 import {EventService} from "../services/event.client.service";
+import {UserService} from "../services/user.client.service";
 
 @Component({
   selector: 'app-eventdetail',
@@ -16,11 +17,11 @@ export class EventdetailComponent implements OnInit {
   comment: string;
   user: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private eventService: EventService, public sharedeDataService: SharedDataService, private router: Router) { }
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private eventService: EventService, public sharedDataService: SharedDataService, private router: Router) { }
 
   ngOnInit() {
 
-    this.user = this.sharedeDataService.user;
+    this.user = this.sharedDataService.user;
 
     this.activatedRoute.params.subscribe(params => {
       this.eventId = params['eventId'];
@@ -32,6 +33,29 @@ export class EventdetailComponent implements OnInit {
             this.event = data;
         }
       );
+  }
+
+  registerEvent(){
+
+    this.sharedDataService.user.events.push(this.event);
+    console.log(this.sharedDataService.user);
+    this.userService.updateUser(this.sharedDataService.user)
+      .subscribe(
+        (data) => {
+          console.log(data);
+          this.userService.findUserById(this.sharedDataService.user._id)
+            .subscribe(
+              (data) => {
+                console.log('update user', data);
+                this.sharedDataService.user = data;
+                this.router.navigate(['/myevents']);
+              }
+            );
+
+          this.sharedDataService.user = data;
+        }
+      );
+
   }
 
   addComment(){
@@ -58,7 +82,6 @@ export class EventdetailComponent implements OnInit {
             );
         }
       );
-
 
   }
 

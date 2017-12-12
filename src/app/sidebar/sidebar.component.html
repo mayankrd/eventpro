@@ -7,6 +7,9 @@
         <a>Profile Options</a>
       </li>
       <li>
+        <a [routerLink]="['/myevents']">My Events <span class="sr-only">(current)</span></a>
+      </li>
+      <li>
         <a *ngIf="isAdmin" [routerLink]="['/new/user']">Create User</a>
       </li>
       <li>

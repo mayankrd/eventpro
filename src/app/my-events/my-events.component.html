@@ -1,0 +1,21 @@
+<div class="pad_top"></div>
+<div class="container">
+  <h3>My Events</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Event Name</th>
+      <th scope="col">Event Description</th>
+      <th scope="col">Category</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let event of events">
+      <td>{{event.eventname}}</td>
+      <td>{{event.eventdescription}}</td>
+      <td>{{event.Category.categoryname}}</td>
+      <td><a class="mouse_pointer text-danger" (click)="unRegister(event)"> UnRegister </a></td>
+    </tr>
+    </tbody>
+  </table>

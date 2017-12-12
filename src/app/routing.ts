@@ -18,11 +18,13 @@ import {AllUsersComponent} from "./all-users/all-users.component";
 import {AllCategoriesComponent} from "./all-categories/all-categories.component";
 import {LocalEventsComponent} from "./local-events/local-events.component";
 import {CreateUserComponent} from "./create-user/create-user.component";
+import {MyEventsComponent} from "./my-events/my-events.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
   {path: 'home', component : HomeComponent},
   {path: 'events', component : LocalEventsComponent},
+  {path: 'myevents', component : MyEventsComponent},
   {path: 'new/category', component : CategoryComponent},
   {path: 'new/event', component : EventComponent},
   {path: 'new/user', component : CreateUserComponent},

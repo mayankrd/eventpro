@@ -24,6 +24,7 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
 import { LocalEventsComponent } from './local-events/local-events.component';
 import { FooterComponent } from './footer/footer.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { MyEventsComponent } from './my-events/my-events.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
     AllCategoriesComponent,
     LocalEventsComponent,
     FooterComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    MyEventsComponent
   ],
   imports: [
     BrowserModule,
