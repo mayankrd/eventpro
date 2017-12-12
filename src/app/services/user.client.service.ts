@@ -53,21 +53,31 @@ export class UserService {
 
   updateUser(user) {
 
-    console.log(JSON.stringify(user));
+    this.options.withCredentials = true;
 
-    var url = this.baseUrl + '/api/user/' + user._id;
+    const body = user;
 
-    user = JSON.stringify(user);
+    console.log('at user client', body);
 
-    console.log(url);
-
-    return this._http.put(url, user)
+    return this._http.post(this.baseUrl + '/api/user/update', body, this.options)
       .map(
         (res: Response) => {
-          return 'Updated';
+          const data = res.json();
+          return data;
         }
       );
+  }
 
+  findUserById(userId){
+    this.options.withCredentials = true;
+
+    return this._http.get(this.baseUrl + '/api/user/' + userId, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
   }
 
 }

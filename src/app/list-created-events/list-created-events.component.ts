@@ -13,7 +13,17 @@ export class ListCreatedEventsComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sharedDataSrevice.ge
+    console.log('list events', this.sharedDataSrevice.user._id);
+
+    this.eventService.findUserById(this.sharedDataSrevice.user._id)
+      .subscribe(
+        (data) => {
+          console.log('find user by id');
+          console.log(data);
+        },
+        (error) => console.log(error)
+
+      );
   }
 
 }

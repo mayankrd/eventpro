@@ -7,7 +7,7 @@ app.delete("/api/event/:eventId",deleteEvent);
 app.get("/api/event/",findAllEvents);
 function createEvent(req, res){
   var newEvent = req.body;
-  console.log(newEvent);
+  //console.log(newEvent);
   eventModel
     .createEvent(newEvent)
     .then(function(event) {
@@ -56,7 +56,7 @@ function updateEvent(req, res) {
   }
 
   function findAllEvents(req,res){
-    console.log("Find All Events");
+   // console.log("Find All Events");
     eventModel
     .findAllEvents()
     .then(function(event){

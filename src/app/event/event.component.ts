@@ -72,7 +72,21 @@ export class EventComponent implements OnInit {
           console.log(data);
           this.sharedDataService.user.createdEvents.push(data);
           console.log(this.sharedDataService.user);
-          this.userService.updateUser(this.sharedDataService.user);
+          this.userService.updateUser(this.sharedDataService.user)
+            .subscribe(
+              (data) => {
+                console.log(data);
+                this.userService.findUserById(this.sharedDataService.user._id)
+                  .subscribe(
+                    (data) => {
+                      console.log('update user', data);
+                      this.sharedDataService.user = data;
+                    }
+                  );
+
+                this.sharedDataService.user = data;
+              }
+            );
         },
         (error) => {
           this.successFlag = false;

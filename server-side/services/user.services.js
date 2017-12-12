@@ -1,12 +1,11 @@
 module.exports = function(app, userModel) {
 
+ app.post("/api/user/update", updateUser);
  app.post("/api/user", createUser);
  app.post("/api/login", findUser);
  app.get("/api/users/",findAllUsers);
  app.get("/api/user/:userId", findUserById);
  app.delete("/api/user/:userId", deleteUser);
- app.put("/api/user/:userId", updateUser);
-
 
 
   function createUser(req, res){
@@ -85,8 +84,10 @@ function findUserById(req, res) {
 }
 
 function updateUser(req, res) {
-    var userId = req.params.userId;
+    //var userId = req.params.userId;
+
     var newUser = req.body;
+    var userId = newUser._id;
 
     console.log(newUser);
 

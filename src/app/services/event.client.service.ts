@@ -73,5 +73,21 @@ export class EventService {
 
   }
 
+  findUserById(id){
+
+    this.options.withCredentials = true;
+
+    console.log(id);
+
+    return this._http.get(this.baseUrlServer + '/api/user/' + id, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          console.log(data);
+          return data;
+        }
+      );
+  }
+
 
 }
