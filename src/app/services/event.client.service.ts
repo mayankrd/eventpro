@@ -29,6 +29,22 @@ export class EventService {
 
   }
 
+  deleteEvent(event){
+
+    this.options.withCredentials = true;
+
+    const body = event;
+
+    return this._http.delete(this.baseUrlServer + '/api/event/' + event._id, this.options)
+      .map(
+        (res: Response) => {
+          const data = res;
+          return data;
+        }
+      );
+
+  }
+
   createEvent(event){
 
     this.options.withCredentials = true;
@@ -71,6 +87,22 @@ export class EventService {
         }
       );
 
+  }
+
+  findEventById(id){
+
+    this.options.withCredentials = true;
+
+    console.log(id);
+
+    return this._http.get(this.baseUrlServer + '/api/event/' + id, this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          console.log(data);
+          return data;
+        }
+      );
   }
 
   findUserById(id){
