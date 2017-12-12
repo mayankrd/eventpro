@@ -119,6 +119,19 @@ export class EventService {
       );
   }
 
+  findAllEvents(){
+
+    this.options.withCredentials = true;
+    return this._http.get(this.baseUrlServer + '/api/event', this.options)
+      .map(
+        (res: Response) => {
+          const data = res.json();
+          return data;
+        }
+      );
+
+  }
+
   findUserById(id){
 
     this.options.withCredentials = true;

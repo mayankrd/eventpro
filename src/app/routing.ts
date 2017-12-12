@@ -16,16 +16,18 @@ import {ManageeventComponent} from "./manageevent/manageevent.component";
 import {ListCreatedEventsComponent} from "./list-created-events/list-created-events.component";
 import {AllUsersComponent} from "./all-users/all-users.component";
 import {AllCategoriesComponent} from "./all-categories/all-categories.component";
+import {LocalEventsComponent} from "./local-events/local-events.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
   {path: 'home', component : HomeComponent},
+  {path: 'events', component : LocalEventsComponent},
   {path: 'new/category', component : CategoryComponent},
   {path: 'new/event', component : EventComponent},
   {path: 'profile', component : ProfileComponent},
   {path: 'login', component : LoginComponent},
   {path: 'register', component : RegisterComponent},
-  {path: 'eventdetail', component : EventdetailComponent},
+  {path: 'events/:eventId', component : EventdetailComponent},
   {path: 'manage/list/events', component : ListCreatedEventsComponent},
   {path: 'manage/event/:eventId', component : ManageeventComponent},
   {path: 'manage/list/users', component : AllUsersComponent},

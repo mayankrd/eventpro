@@ -21,6 +21,7 @@ import { ManageeventComponent } from './manageevent/manageevent.component';
 import { ListCreatedEventsComponent } from './list-created-events/list-created-events.component';
 import { AllUsersComponent } from './all-users/all-users.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
+import { LocalEventsComponent } from './local-events/local-events.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
     ManageeventComponent,
     ListCreatedEventsComponent,
     AllUsersComponent,
-    AllCategoriesComponent
+    AllCategoriesComponent,
+    LocalEventsComponent
   ],
   imports: [
     BrowserModule,

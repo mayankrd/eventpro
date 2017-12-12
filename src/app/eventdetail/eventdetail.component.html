@@ -1,10 +1,20 @@
-<div class="row pad_top container">
-  <div class="col-md-12">
-    <h2> {{ this.sharedeDataService.eventdetail.name.text }}  </h2>
-    <p> {{ this.sharedeDataService.eventdetail.description.text}} </p>
-    <h4> Starts:  </h4> <p> {{ this.sharedeDataService.eventdetail.start.local | date }} {{ this.sharedeDataService.eventdetail.start.local | date:'shortTime' }} Time Zone: {{ this.sharedeDataService.eventdetail.start.timezone}} </p>
+<div class="container pad_top">
+  <!-- Example row of columns -->
+  <div class="row">
 
-  <!-- Indicates a successful or positive action -->
-  <button type="button" class="btn btn-success">Register</button>
+      <h2>{{event.eventname }}  </h2>
+      <p> {{event.eventdescription}} </p>
+      <p><a class="btn btn-success" (click)="showEventDetails(event)" role="button">Register</a></p>
+
   </div>
-</div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; Mayank Ranjan Dayal & Rushikesh Badami (CS5200 Final Project Fall 2017)</p>
+  </footer>
+</div> <!-- /container -->
+
+
+
+
