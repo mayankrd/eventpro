@@ -49,6 +49,22 @@ export class EventdetailComponent implements OnInit {
 
   registerEvent(){
 
+    console.log(this.eventId)
+
+    if(this.eventId == 'eventbrite'){
+
+      var event = {
+
+        eventname: this.event.name.text,
+        eventdescription: this.event.description.text,
+        Category: { categoryname: 'Leisure'},
+        organiser: 'eventbrite'
+      };
+
+      this.event = event;
+
+    }
+
     this.sharedDataService.user.events.push(this.event);
     console.log(this.sharedDataService.user);
     this.userService.updateUser(this.sharedDataService.user)
