@@ -29,6 +29,6 @@ export class HomeComponent implements OnInit {
 
   showEventDetails(event){
     this.sharedDataService.eventdetail = event;
-    this.router.navigate(['/eventdetail']);
+    this.router.navigate(['/events/eventbrite']);
   }
 }

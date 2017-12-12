@@ -2,8 +2,8 @@
   <!-- Example row of columns -->
 
 
-  <h2>{{event.eventname }} </h2>
-  <p> {{event.eventdescription}} </p>
+  <h2>{{event.eventname || event.name.text}} </h2>
+  <p> {{event.eventdescription || event.description.text}} </p>
   <p><a class="btn btn-success" (click)="registerEvent(event)" role="button">Register</a></p>
 
 

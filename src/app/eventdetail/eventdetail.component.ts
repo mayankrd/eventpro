@@ -27,12 +27,24 @@ export class EventdetailComponent implements OnInit {
       this.eventId = params['eventId'];
     });
 
-    this.eventService.findEventById(this.eventId)
-      .subscribe(
-        (data) => {
+    console.log(this.eventId);
+
+    // if its an event brite event then display those details else find event by id
+
+    if(this.eventId == 'eventbrite'){
+      this.event = this.sharedDataService.eventdetail;
+      console.log(this.event);
+    }
+    else{
+      this.eventService.findEventById(this.eventId)
+        .subscribe(
+          (data) => {
             this.event = data;
-        }
-      );
+          }
+        );
+    }
+
+
   }
 
   registerEvent(){
