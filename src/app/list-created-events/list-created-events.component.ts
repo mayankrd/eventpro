@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {EventService} from "../services/event.client.service";
 import {SharedDataService} from "../services/shared.data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-list-created-events',
@@ -9,21 +10,17 @@ import {SharedDataService} from "../services/shared.data.service";
 })
 export class ListCreatedEventsComponent implements OnInit {
 
-  constructor(private eventService: EventService, private sharedDataSrevice: SharedDataService) { }
+  constructor(private router: Router, private eventService: EventService, public sharedDataSrevice: SharedDataService) { }
 
   ngOnInit() {
 
     console.log('list events', this.sharedDataSrevice.user._id);
 
-    this.eventService.findUserById(this.sharedDataSrevice.user._id)
-      .subscribe(
-        (data) => {
-          console.log('find user by id');
-          console.log(data);
-        },
-        (error) => console.log(error)
+  }
 
-      );
+  manageEvent(id){
+    var url = 'manage/event/' + id;
+    this.router.navigate([url]);
   }
 
 }

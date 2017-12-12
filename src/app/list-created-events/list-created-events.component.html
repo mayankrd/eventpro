@@ -1,4 +1,4 @@
-<div class="pad_top container">
+<div class="pad_top"></div>
 <table class="table">
   <thead>
   <tr>
@@ -9,14 +9,11 @@
   </tr>
   </thead>
   <tbody>
-  <div>
-    <tr>
-      <td scope="col">Mark</td>
-      <td scope="col">Otto</td>
-      <td scope="col">@mdo</td>
-      <td scope="col">@mdo</td>
+    <tr *ngFor="let event of this.sharedDataSrevice.user.createdEvents">
+      <td>{{event.eventname}}</td>
+      <td>{{event.Category.categoryname}}</td>
+      <td>{{event.eventdescription}}</td>
+      <td><a class="mouse_pointer" (click)="manageEvent(event._id)"> Manage </a></td>
     </tr>
-  </div>
   </tbody>
 </table>
-</div>
