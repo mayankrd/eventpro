@@ -1,6 +1,9 @@
 <div class="pad_top"></div>
 <div class="container">
   <h3>My Events</h3>
+  <div *ngIf="successFlag" class="alert alert-success" role="alert">
+    Unregistered from the event!
+  </div>
   <table class="table">
     <thead>
     <tr>
