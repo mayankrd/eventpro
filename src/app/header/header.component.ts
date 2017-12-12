@@ -11,11 +11,22 @@ import {EventService} from "../services/event.client.service";
 export class HeaderComponent implements OnInit {
 
   searchKey: string;
-
+  isAdmin: boolean;
+  isOrganizer: boolean;
 
   constructor(private eventService: EventService, public sharedDataService: SharedDataService, private router: Router) { }
 
   ngOnInit() {
+
+      var type = this.sharedDataService.user.type;
+      if(type == 'admin')
+        this.isAdmin = true;
+      else if(type == 'organiser')
+        this.isOrganizer = true;
+      else{
+        this.isAdmin = false;
+        this.isOrganizer = false;
+      }
 
   }
 

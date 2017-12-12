@@ -9,15 +9,20 @@ module.exports = function(app)
     app.delete("/api/test/:id", deleteMessage);
 
   // connection string for local testing
-  var connectionString = 'mongodb://127.0.0.1:27017/test';
+  // var connectionString = 'mongodb://127.0.0.1:27017/test';
+  //
+  // // logic to host app on heroku
+  // if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
+  //   var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
+  //   var password = process.env.MLAB_PASSWORD_WEBDEV;
+  //   connectionString = 'mongodb://' + username + ':' + password;
+  //   connectionString += '@ds135534.mlab.com:35534/heroku_451qtmbx'; // use yours
+  // }
+  // mongodb://<dbuser>:<dbpassword>@ds137206.mlab.com:37206/eventpro
 
-  // logic to host app on heroku
-  if(process.env.MLAB_USERNAME_WEBDEV) { // check if running remotely
-    var username = process.env.MLAB_USERNAME_WEBDEV; // get from environment
-    var password = process.env.MLAB_PASSWORD_WEBDEV;
-    connectionString = 'mongodb://' + username + ':' + password;
-    connectionString += '@ds135534.mlab.com:35534/heroku_451qtmbx'; // use yours
-  }
+  var connectionString = 'mongodb://admin:admin@ds137206.mlab.com:37206/eventpro';
+  var mongoose = require("mongoose");
+  mongoose.connect(connectionString);
 
   // updates to mongoose
   var mongoose = require("mongoose");
