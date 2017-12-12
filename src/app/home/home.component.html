@@ -3,8 +3,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-3">EventPro</h1>
-    <p>EventPro is a platform to allow users and organizers to create, share, find and attend events like concerts, games, plays, hackathons, etc.</p>
+    <h1 class="display-3 row">Event<p class="text-success">Pro</p></h1>
+    <h3>EventPro is a platform to allow users and organizers to create, share, find and attend events like concerts, games, plays, hackathons, etc.</h3>
     <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>-->
   </div>
 </div>
@@ -14,6 +14,9 @@
   <div class="row">
     <div class="col-md-4" *ngFor="let event of this.sharedDataService.events">
       <h2>{{event.name.text }}  </h2>
+      <div class="text-center">
+        <img src={{event.logo.url}} height="200" width="300" class="rounded" alt="...">
+      </div>
       <p> {{event.description.text | slice:0:100}} </p>
       <p><a class="btn btn-secondary" (click) = "showEventDetails(event)" role="button">View details &raquo;</a></p>
     </div>
