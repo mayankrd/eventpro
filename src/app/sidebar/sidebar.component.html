@@ -7,6 +7,9 @@
         <a>Profile Options</a>
       </li>
       <li>
+        <a *ngIf="isAdmin" [routerLink]="['/new/user']">Create User</a>
+      </li>
+      <li>
         <a *ngIf="isAdmin" [routerLink]="['/manage/list/users']">Manage Users</a>
       </li>
       <li>

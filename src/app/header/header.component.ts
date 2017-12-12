@@ -19,8 +19,6 @@ export class HeaderComponent implements OnInit {
 
       }
 
-
-
   searchEvents(){
 
     this.eventService.searchEvents(this.searchKey)

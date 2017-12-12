@@ -17,6 +17,7 @@ import {ListCreatedEventsComponent} from "./list-created-events/list-created-eve
 import {AllUsersComponent} from "./all-users/all-users.component";
 import {AllCategoriesComponent} from "./all-categories/all-categories.component";
 import {LocalEventsComponent} from "./local-events/local-events.component";
+import {CreateUserComponent} from "./create-user/create-user.component";
 
 const APP_ROUTES: Routes = [
   {path: '', component : HomeComponent},
@@ -24,6 +25,7 @@ const APP_ROUTES: Routes = [
   {path: 'events', component : LocalEventsComponent},
   {path: 'new/category', component : CategoryComponent},
   {path: 'new/event', component : EventComponent},
+  {path: 'new/user', component : CreateUserComponent},
   {path: 'profile', component : ProfileComponent},
   {path: 'login', component : LoginComponent},
   {path: 'register', component : RegisterComponent},

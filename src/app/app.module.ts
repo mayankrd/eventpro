@@ -23,6 +23,7 @@ import { AllUsersComponent } from './all-users/all-users.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
 import { LocalEventsComponent } from './local-events/local-events.component';
 import { FooterComponent } from './footer/footer.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FooterComponent } from './footer/footer.component';
     AllUsersComponent,
     AllCategoriesComponent,
     LocalEventsComponent,
-    FooterComponent
+    FooterComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
