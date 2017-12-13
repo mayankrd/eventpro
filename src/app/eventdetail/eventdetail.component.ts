@@ -16,12 +16,15 @@ export class EventdetailComponent implements OnInit {
   event: any;
   comment: string;
   user: any;
+  disabled: boolean;
 
   constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private eventService: EventService, public sharedDataService: SharedDataService, private router: Router) { }
 
   ngOnInit() {
 
     this.user = this.sharedDataService.user;
+
+    console.log(this.user);
 
     this.activatedRoute.params.subscribe(params => {
       this.eventId = params['eventId'];
@@ -42,6 +45,10 @@ export class EventdetailComponent implements OnInit {
             this.event = data;
           }
         );
+    }
+
+    if(this.user == undefined){
+      this.disabled = true;
     }
 
 
