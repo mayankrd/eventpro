@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running the app
 
-Run `ng serve` to start Angular front-end
-Run `node server.js` to start Node back-end
-Remote instance of MongoDB is deployed on mLab
+###### Run `ng serve` to start Angular front-end. 
+###### Run `node server.js` to start Node back-end. 
+###### Remote instance of MongoDB is deployed on mLab
 
 ## Development server
 
