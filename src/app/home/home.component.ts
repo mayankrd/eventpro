@@ -19,6 +19,8 @@ export class HomeComponent implements OnInit {
       this.eventService.searchEvents("")
         .subscribe(
           (data) => {
+
+            data.events.splice(21, (data.events.length - 21));
             this.sharedDataService.events = data.events;
 
               console.log(this.sharedDataService.events);
