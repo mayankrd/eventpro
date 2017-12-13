@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
+## Running the app
+
+Run `ng serve` to start Angular front-end
+Run `node server.js` to start Node back-end
+Remote instance of MongoDB is deployed on mLab
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
