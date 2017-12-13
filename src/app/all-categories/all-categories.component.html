@@ -1,6 +1,7 @@
 <div class="pad_top"></div>
 <div class="container">
 <h3>Manage Categories</h3>
+  <!--<div class="bg-success text-white">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</div>-->
 <table class="table">
   <thead>
   <tr>
@@ -13,7 +14,7 @@
   <tr *ngFor="let cat of cats">
     <td>{{cat.categoryname}}</td>
     <td>{{cat.description}}</td>
-    <td><a class="mouse_pointe text-dangerr" (click)="deleteCategory(cat._id)"> Delete </a></td>
+    <td><a class="mouse_pointe text-danger" (click)="deleteCategory(cat._id)"> Delete </a></td>
   </tr>
   </tbody>
 </table>

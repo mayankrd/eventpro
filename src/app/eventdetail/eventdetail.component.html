@@ -4,7 +4,7 @@
 
   <h2>{{event.eventname || event.name.text}} </h2>
   <p> {{event.eventdescription || event.description.text}} </p>
-  <p><a class="btn btn-success" (click)="registerEvent(event)" role="button">Register</a></p>
+  <p><button class="btn btn-success" (click)="registerEvent(event)" role="button">Register</button></p>
 
 
   <div *ngFor="let com of event.comments">
@@ -18,7 +18,7 @@
   <div class="form-group">
     <textarea name="comment" [(ngModel)]="comment" class="form-control" rows="5" id="comment"></textarea>
   </div>
-  <p><a class="btn btn-secondary" (click)="addComment(event)" role="button">Comment</a></p>
+  <p><button type="button" class="btn btn-secondary" (click)="addComment(event)" role="button">Comment</button></p>
 
 </div> <!-- /container -->
 

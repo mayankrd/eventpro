@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
       this.eventService.searchEvents("")
         .subscribe(
           (data) => {
-            this.sharedDataService.events = data.events,
+            this.sharedDataService.events = data.events;
 
               console.log(this.sharedDataService.events);
           }

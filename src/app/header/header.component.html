@@ -27,7 +27,7 @@
       </ng-template>
 
       <li class="nav-item active">
-        <a class="nav-link" *ngIf="this.sharedDataService.loggedIn" (click)="logout()">Logout <span class="sr-only">(current)</span></a>
+        <a class="nav-link pointer" *ngIf="this.sharedDataService.loggedIn; else falsyTemplate1" (click)="logout()">Logout <span class="sr-only">(current)</span></a>
       </li>
 
       <!--<li class="nav-item">-->

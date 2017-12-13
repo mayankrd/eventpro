@@ -16,8 +16,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
 
-
-      }
+  }
 
   searchEvents(){
 
@@ -34,8 +33,10 @@ export class HeaderComponent implements OnInit {
   }
 
   logout(){
+    console.log('logout');
     this.sharedDataService.user = '';
     this.sharedDataService.loggedIn = false;
-    this.router.navigate(['']);
+    console.log(this.sharedDataService.loggedIn);
+    this.router.navigate(['/events']);
   }
 }
